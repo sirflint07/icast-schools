@@ -17,6 +17,7 @@ import {
   pillars,
   type FacilityCategory,
 } from './about-people';
+import { cn } from '@/lib/utils';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -34,12 +35,14 @@ function SectionHeading({
   highlight,
   aside,
   light = false,
+  style
 }: {
   eyebrow: string;
   title: string;
   highlight?: string;
   aside?: string;
   light?: boolean;
+  style?: string
 }) {
   return (
     <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-12">
@@ -49,16 +52,21 @@ function SectionHeading({
           <span className="text-[11px] font-bold uppercase tracking-[0.14em]">{eyebrow}</span>
         </div>
         <h2
-          className={`text-4xl md:text-5xl font-semibold tracking-tight leading-[1.08] ${light ? 'text-white' : 'text-gray-700'}`}
+          className={cn( 
+            'text-4xl md:text-5xl font-semibold tracking-tight leading-[1.08]',
+            light ? 'text-white' : `${style}`)}
         >
           {title}{' '}
           {highlight && (
-            <em className="text-burgundy font-serif font-medium not-italic">{light ? 'text-gold' : 'text-gray-700'} {highlight}</em>
+            <em className={cn(
+              "text-burgundy font-serif font-medium not-italic",
+              light ? 'text-gold' : 'text-slate-300'
+            )}> {highlight}</em>
           )}
         </h2>
       </div>
       {aside && (
-        <p className={`max-w-xs text-sm leading-relaxed ${light ? 'text-white/70' : 'text-gray-500'}`}>{aside}</p>
+        <p className={`max-w-xs text-sm leading-relaxed ${light ? 'text-white/70' : 'text-gray-100'}`}>{aside}</p>
       )}
     </div>
   );
@@ -269,7 +277,6 @@ export default function AboutHero() {
         </div>
       </section>
 
-      {/* ===== WHAT MAKES ICAST DIFFERENT ===== */}
       <section className="py-24 md:py-32 bg-deep-burgundy">
         <div className="mx-auto w-[min(1160px,calc(100%-64px))] text-slate-100">
           <SectionHeading
@@ -277,7 +284,7 @@ export default function AboutHero() {
             title="Six reasons families"
             highlight="choose us."
             aside="Not promises on paper — the everyday experience your child will have at ICAST."
-            light={true}
+            
           />
           <motion.div
             initial="hidden"
@@ -290,15 +297,15 @@ export default function AboutHero() {
               <motion.div
                 key={item.title}
                 variants={fadeUp}
-                className="group relative bg-white p-8 md:p-10 transition-colors hover:bg-warm"
+                className="group relative bg-white p-8 md:p-10 transition-colors hover:bg-warm text-muted-gold"
               >
                 <div className="flex items-start justify-between mb-6">
-                  <div className="flex h-12 w-12 items-center justify-center bg-burgundy/8 text-burgundy transition-colors group-hover:bg-burgundy group-hover:text-white">
+                  <div className="flex h-12 w-12 items-center justify-center bg-burgundy/8 text-burgundy transition-colors group-hover:bg-burgundy group-hover:text-navy-blue">
                     <item.icon size={22} strokeWidth={1.5} />
                   </div>
                   <span className="font-serif text-3xl text-gold/40">0{i + 1}</span>
                 </div>
-                <h3 className="text-lg font-semibold text-navy mb-2">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-navy-blue mb-2">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-500">{item.text}</p>
               </motion.div>
             ))}
@@ -326,7 +333,7 @@ export default function AboutHero() {
                 alt={proprietorName}
                 className="relative w-full h-[480px] md:h-[540px] object-cover"
               />
-              <div className="absolute -bottom-6 -right-3 md:right-6 bg-burgundy px-5 py-4">
+              <div className="absolute -bottom-6 -right-3 md:right-6 bg-burgundy px-5 py-4 mb-4">
                 <p className="font-serif text-lg leading-tight">{proprietorName}</p>
                 <p className="mt-1 text-[10px] uppercase tracking-[0.13em] text-gold-light">{proprietorTitle}</p>
               </div>
@@ -340,19 +347,19 @@ export default function AboutHero() {
             >
               <motion.div variants={fadeUp} className="flex items-center gap-2.5 mb-5 text-gold">
                 <span className="h-px w-7 bg-gold" />
-                <span className="text-[11px] font-bold uppercase tracking-[0.14em]">A Message From Our Proprietor</span>
+                <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-deep-burgundy">A Message From Our Proprietor</span>
               </motion.div>
               <motion.div variants={fadeUp} className="text-gold mb-6">
-                <Quote size={40} strokeWidth={1} />
+                <Quote size={40} strokeWidth={1} className='text-navy-blue'/>
               </motion.div>
               <motion.div variants={fadeUp} className="space-y-5">
                 {proprietorMessage.split('\n\n').map((para, i) => (
-                  <p key={i} className="font-serif text-lg md:text-xl leading-[1.6] text-white/90 italic">
+                  <p key={i} className="font-serif text-lg md:text-xl leading-[1.6] text-navy-blue italic">
                     {para}
                   </p>
                 ))}
               </motion.div>
-              <motion.div variants={fadeUp} className="mt-8">
+              <motion.div variants={fadeUp} className="mt-">
                 <p className="font-serif text-xl">{proprietorName}</p>
                 <p className="mt-1 text-[11px] uppercase tracking-[0.13em] text-gold-light">{proprietorTitle}</p>
               </motion.div>

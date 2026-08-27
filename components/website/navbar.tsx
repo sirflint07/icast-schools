@@ -1,5 +1,6 @@
 
 'use client'
+import { Item } from '@radix-ui/react-accordion';
 import { ArrowRight, ChevronDown, ChevronRight, Clock3, Menu, Phone, X } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react'
@@ -241,7 +242,7 @@ const Navbar = () => {
                 >
                   <div className="mobile-menu-top">
                     <a href="#top" className="brand">
-                      <span className="brand-mark">I</span>
+                      <Image src={logoImage} alt='school-logo' width={20} height={20} className='object-contain lg:w-11 lg:h-11 w-8 h-8'/>
                       <span>
                         <strong>ICAST</strong>
                         <small>Schools</small>
@@ -255,16 +256,19 @@ const Navbar = () => {
                     </button>
                   </div>
                   <nav>
-                    {["Home", ...navItems.map((item) => item.label)].map((label) => (
-                      <a
-                        href={label === "Home" ? "#top" : "#contact"}
-                        key={label}
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {label}
-                        <ChevronRight size={16} />
-                      </a>
-                    ))}
+                    {
+                        navItems.map((nav) => {
+                            return (
+                            <a 
+                            key={nav.label}
+                            onClick={() => setMobileOpen(false)}
+                            href={`${pageAddress}${nav.label.toLowerCase()}`}>
+                                {nav.label}
+                                <ChevronRight size={16}/>
+                            </a>
+                            )
+                        })
+                    }
                   </nav>
                   <a
                     className="button button-burgundy"

@@ -47,7 +47,7 @@ export interface Person {
 }
 
 export const people: Person[] = [
-  { name: 'Mr. Samuel Olawale', role: 'Principal', bio: 'A seasoned educator with over two decades of experience leading secondary education, committed to academic rigour and student character formation.', image: 'https://images.pexels.com/photos/8617942/pexels-photo-8617942.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', tier: 'leadership' },
+  { name: 'Mr. Busayo', role: 'Principal', bio: 'A seasoned educator with over two decades of experience leading secondary education, committed to academic rigour and student character formation.', image: '/images/principal-icast.png', tier: 'leadership' },
   { name: 'Mrs. Funmilayo Adeyemi', role: 'Vice Principal', bio: 'Leads curriculum development and academic standards, ensuring every classroom meets the expectations of 21st-century education.', image: 'https://images.pexels.com/photos/5905898/pexels-photo-5905898.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', tier: 'leadership' },
   { name: 'Mr. Daniel Okonkwo', role: 'Headmaster', bio: 'Oversees the primary and nursery sections, bringing warmth and structure to every child\'s earliest school experience.', image: 'https://images.pexels.com/photos/27670041/pexels-photo-27670041.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', tier: 'staff' },
   { name: 'Mrs. Grace Eze', role: 'Head of Teachers', bio: 'Mentors teaching staff and drives continuous professional development across all academic departments.', image: 'https://images.pexels.com/photos/8423069/pexels-photo-8423069.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', tier: 'staff' },
@@ -97,9 +97,9 @@ export const heroImages = [
 
 export const whoWeAreImage = 'https://images.pexels.com/photos/8926848/pexels-photo-8926848.jpeg?auto=compress&cs=tinysrgb&h=650&w=940';
 
-export const proprietorImage = 'https://images.pexels.com/photos/27670041/pexels-photo-27670041.jpeg?auto=compress&cs=tinysrgb&h=650&w=940';
+export const proprietorImage = '/images/proprietor-icast.png';
 
-export const proprietorName = 'Dr. Adebayo Isaac Olawale';
+export const proprietorName = 'Engr. Dotun Sanusi';
 export const proprietorTitle = 'Proprietor, ICAST Schools';
 
 export const proprietorMessage = `At ICAST, we believe that education goes beyond what happens inside the classroom. Our responsibility is to equip every child with knowledge, character, confidence and the skills needed to make a meaningful contribution to society.
