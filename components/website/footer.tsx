@@ -1,14 +1,16 @@
 import { ArrowRight, Camera, Phone } from 'lucide-react'
+import Image from 'next/image'
 import React from 'react'
 
 const Footer = () => {
+    const logoImage = '/images/icast-logo.png'
   return (
     <div>
       <footer className="site-footer">
         <div className="container footer-main">
           <div className="footer-brand">
             <a href="#top" className="brand brand-light">
-              <span className="brand-mark">I</span>
+              <Image src={logoImage} alt='school-logo' width={20} height={20} className='object-contain lg:w-11 lg:h-11 w-8 h-8'/>
               <span>
                 <strong>ICAST</strong>
                 <small>Schools</small>

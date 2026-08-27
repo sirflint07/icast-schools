@@ -49,11 +49,11 @@ function SectionHeading({
           <span className="text-[11px] font-bold uppercase tracking-[0.14em]">{eyebrow}</span>
         </div>
         <h2
-          className={`text-4xl md:text-5xl font-semibold tracking-tight leading-[1.08] ${light ? 'text-white' : 'text-navy'}`}
+          className={`text-4xl md:text-5xl font-semibold tracking-tight leading-[1.08] ${light ? 'text-white' : 'text-gray-700'}`}
         >
           {title}{' '}
           {highlight && (
-            <em className="text-burgundy font-serif font-medium not-italic">{light ? 'text-gold' : ''} {highlight}</em>
+            <em className="text-burgundy font-serif font-medium not-italic">{light ? 'text-gold' : 'text-gray-700'} {highlight}</em>
           )}
         </h2>
       </div>
@@ -72,7 +72,7 @@ export default function AboutHero() {
 
   return (
     <div className="bg-warm">
-      {/* ===== HERO ===== */}
+
       <section className="relative overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24">
         <div className="mx-auto w-[min(1160px,calc(100%-64px))]">
           <div className="grid items-center gap-12 lg:grid-cols-[44%_56%]">
@@ -152,7 +152,6 @@ export default function AboutHero() {
         </div>
       </section>
 
-      {/* ===== WHO WE ARE ===== */}
       <section id="who-we-are" className="py-24 md:py-32 bg-white">
         <div className="mx-auto w-[min(1160px,calc(100%-64px))]">
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
@@ -164,9 +163,9 @@ export default function AboutHero() {
               className="relative pr-8 pb-10"
             >
               <img src={whoWeAreImage} alt="Students walking through the ICAST campus" className="w-full h-[420px] object-cover" />
-              <div className="absolute bottom-0 right-0 w-48 md:w-52 bg-navy p-5 shadow-xl">
+              <div className="absolute bottom-0 right-0 w-48 md:w-52 bg-red-900 p-5 shadow-xl">
                 <div className="mb-3.5 flex h-9 w-9 items-center justify-center bg-gold text-navy">
-                  <Quote size={16} />
+                  <Quote size={16} className='text-white'/>
                 </div>
                 <p className="font-serif text-lg leading-snug text-white">Where curiosity<br />becomes capability.</p>
               </div>
@@ -217,8 +216,7 @@ export default function AboutHero() {
         </div>
       </section>
 
-      {/* ===== MISSION & VISION ===== */}
-      <section className="py-24 md:py-32 bg-warm-dark">
+      <section className="py-24 md:py-32 bg-navy-blue">
         <div className="mx-auto w-[min(1160px,calc(100%-64px))]">
           <SectionHeading
             eyebrow="What We Believe"
@@ -272,13 +270,14 @@ export default function AboutHero() {
       </section>
 
       {/* ===== WHAT MAKES ICAST DIFFERENT ===== */}
-      <section className="py-24 md:py-32 bg-white">
-        <div className="mx-auto w-[min(1160px,calc(100%-64px))]">
+      <section className="py-24 md:py-32 bg-deep-burgundy">
+        <div className="mx-auto w-[min(1160px,calc(100%-64px))] text-slate-100">
           <SectionHeading
             eyebrow="What Makes ICAST Different"
             title="Six reasons families"
             highlight="choose us."
             aside="Not promises on paper — the everyday experience your child will have at ICAST."
+            light={true}
           />
           <motion.div
             initial="hidden"

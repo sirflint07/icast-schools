@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'ICAST Schools — Preparing Students for a Changing World',
   description:
     'International College of Arts, Science and Technology, Elebu, Ibadan. Quality Creche, Nursery, Primary and Secondary education with day and boarding options.',
-    icons: ''
+    icons: '/images/icast-favicon.png'
   // openGraph: {
   //   title: 'ICAST Schools — Preparing Students for a Changing World',
   //   description:

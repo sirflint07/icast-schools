@@ -20,6 +20,13 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
+        'deep-burgundy': '#8B1E3F',
+        'navy-blue': '#172B4D',
+        'royal-blue': '#2563A6',
+        'warm-white': '#FAFAF8',
+        'soft-gray': '#F1F3F5',
+        'charcoal': '#1F2937',
+        'muted-gold': '#D9A441',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -59,7 +66,7 @@ const config: Config = {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
-        },
+        }
       },
       keyframes: {
         'accordion-down': {

@@ -1,12 +1,14 @@
 
 'use client'
 import { ArrowRight, ChevronDown, ChevronRight, Clock3, Menu, Phone, X } from 'lucide-react';
+import Image from 'next/image';
 import React, { useState } from 'react'
 
 const Navbar = () => {
 
-     const [mobileOpen, setMobileOpen] = useState(false);
-      const [openMenu, setOpenMenu] = useState<string | null>(null);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [openMenu, setOpenMenu] = useState<string | null>(null);
+    const logoImage = '/images/icast-logo.png'
 
 
     const navItems = [
@@ -61,7 +63,7 @@ const Navbar = () => {
         children: [
           {
             name: "Admission Process",
-            href: "/admissions/process",
+            href: "/admission",
           },
           {
             name: "Requirements",
@@ -178,7 +180,7 @@ const Navbar = () => {
             <header className="site-header">
               <div className="container nav-inner">
                 <a href="#top" className="brand" aria-label="ICAST Schools home">
-                  <span className="brand-mark">I</span>
+                  <Image src={logoImage} alt='school-logo' width={20} height={20} className='object-contain lg:w-11 lg:h-11 w-8 h-8'/>
                   <span>
                     <strong>ICAST</strong>
                     <small>Schools</small>
