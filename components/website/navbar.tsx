@@ -1,6 +1,6 @@
 
 'use client'
-import { Item } from '@radix-ui/react-accordion';
+
 import { ArrowRight, ChevronDown, ChevronRight, Clock3, Menu, Phone, X } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react'
@@ -158,7 +158,7 @@ const Navbar = () => {
       },
     ];
     
-    const pageAddress = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "icastschools.com/"
+    const pageAddress = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://icast-schools.vercel.app/"
   return (
     <>
     <div className='w-full'>
