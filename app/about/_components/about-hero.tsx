@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, Quote, MapPin } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Quote, MapPin, PhoneCall } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   heroImages,
@@ -49,7 +49,10 @@ function SectionHeading({
       <div>
         <div className={`flex items-center gap-2.5 mb-4 ${light ? 'text-gold' : 'text-burgundy'}`}>
           <span className="h-px w-7 bg-gold" />
-          <span className="text-[11px] font-bold uppercase tracking-[0.14em]">{eyebrow}</span>
+          <span className={cn(
+            "text-[11px] font-bold uppercase tracking-[0.14em]",
+            style !== '' ? style : "",
+            )}>{eyebrow}</span>
         </div>
         <h2
           className={cn( 
@@ -66,7 +69,10 @@ function SectionHeading({
         </h2>
       </div>
       {aside && (
-        <p className={`max-w-xs text-sm leading-relaxed ${light ? 'text-white/70' : 'text-gray-100'}`}>{aside}</p>
+        <p className={cn(
+          "max-w-xs text-sm leading-relaxed",
+          style !== '' ? style : "",
+          !style && ` ${light ? 'text-white/70' : 'text-gray-100'}`)}>{aside}</p>
       )}
     </div>
   );
@@ -440,17 +446,16 @@ export default function AboutHero() {
             ))}
           </motion.div>
 
-          {/* Student leaders */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
-            className="mt-12"
+            className="mt-12 bg-deep-burgundy w-full pt-12"
           >
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px flex-1 bg-gray-200" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-burgundy">Student Leadership</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-100">Student Leadership</span>
               <span className="h-px flex-1 bg-gray-200" />
             </div>
             <div className="grid gap-6 sm:grid-cols-2 max-w-2xl mx-auto">
@@ -458,7 +463,7 @@ export default function AboutHero() {
                 <motion.article
                   key={person.name}
                   variants={fadeUp}
-                  className="group relative bg-navy text-white p-6 overflow-hidden"
+                  className="group relative bg-navy text-navy-blue p-6 overflow-hidden"
                 >
                   <div className="flex items-center gap-4">
                     <div className="relative flex-shrink-0">
@@ -472,7 +477,7 @@ export default function AboutHero() {
                       </span>
                     </div>
                     <div>
-                      <span className="text-[10px] uppercase tracking-[0.14em] text-gold-light">{person.role}</span>
+                      <span className="text-[10px] uppercase tracking-[0.14em] text-muted-gold">{person.role}</span>
                       <h3 className="text-lg font-semibold mt-1">{person.name}</h3>
                       <p className="text-xs text-white/60 mt-1.5 leading-relaxed">{person.bio}</p>
                     </div>
@@ -484,7 +489,6 @@ export default function AboutHero() {
         </div>
       </section>
 
-      {/* ===== OUR FACILITIES ===== */}
       <section className="py-24 md:py-32 bg-white">
         <div className="mx-auto w-[min(1160px,calc(100%-64px))]">
           <SectionHeading
@@ -492,9 +496,9 @@ export default function AboutHero() {
             title="Spaces designed for"
             highlight="discovery."
             aside="From science laboratories to sports courts, every facility at ICAST supports learning, creativity and growth."
+            style='text-black'
           />
 
-          {/* Category tabs */}
           <div className="mt-10 flex justify-start">
             <Tabs defaultValue="all" onValueChange={(v) => setActiveCategory(v as FacilityCategory | 'all')}>
               <TabsList className="bg-warm-dark h-auto p-1.5 rounded-none flex-wrap">
@@ -517,7 +521,6 @@ export default function AboutHero() {
             </Tabs>
           </div>
 
-          {/* Gallery grid */}
           <motion.div
             layout
             className="mt-8 grid grid-cols-2 lg:grid-cols-4 auto-rows-[200px] gap-3"
@@ -559,14 +562,14 @@ export default function AboutHero() {
         </div>
       </section>
 
-      {/* ===== OUR APPROACH TO STUDENT DEVELOPMENT ===== */}
-      <section className="py-24 md:py-32 bg-warm-dark">
+      <section className="py-24 md:py-32 bg-deep-burgundy">
         <div className="mx-auto w-[min(1160px,calc(100%-64px))]">
           <SectionHeading
             eyebrow="Our Approach"
             title="Developing the"
             highlight="whole student."
             aside="Education at ICAST extends far beyond academics — we nurture every dimension of a child's growth."
+            style='text-slate-100'
           />
           <motion.div
             initial="hidden"
@@ -592,8 +595,7 @@ export default function AboutHero() {
         </div>
       </section>
 
-      {/* ===== FINAL CTA ===== */}
-      <section className="py-24 md:py-32 bg-burgundy text-white relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-burgundy relative overflow-hidden">
         <div className="absolute top-0 left-0 font-serif text-[180px] leading-none text-white/[0.04] select-none pointer-events-none -ml-8 mt-4">
           ICAST
         </div>
@@ -612,7 +614,7 @@ export default function AboutHero() {
               <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1]">
                 Come and experience <em className="text-gold font-serif font-medium">ICAST.</em>
               </motion.h2>
-              <motion.p variants={fadeUp} className="mt-6 max-w-lg text-sm leading-[1.75] text-white/75">
+              <motion.p variants={fadeUp} className="mt-6 max-w-lg text-sm leading-[1.75] text-navy-blue">
                 The best way to understand ICAST is to see it for yourself. We invite parents and guardians to visit
                 our Elebu campus, meet our team and discover how we can help your child thrive. Begin your
                 admission journey today.
@@ -620,13 +622,13 @@ export default function AboutHero() {
               <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-6">
                 <a
                   href="/#admissions"
-                  className="inline-flex items-center gap-2.5 bg-white text-navy px-6 py-4 text-xs font-bold rounded transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                  className="inline-flex items-center gap-2.5 bg-deep-burgundy text-slate-100 text-navy px-6 py-4 text-xs font-bold rounded transition-all hover:-translate-y-0.5 hover:shadow-xl hover:bg-navy-blue hover:text-sky-200 hover:border hover:border-muted-gold/50"
                 >
                   Explore Admissions <ArrowRight size={16} />
                 </a>
                 <a
                   href="/#contact"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-white border-b border-gold pb-1.5 hover:text-gold transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-bold px-8 py-4 rounded-xl border-b border-gold  hover:text-gold transition-colors hover:bg-navy-blue hover:text-sky-200 hover:border hover:border-muted-gold/50 bg-muted-gold text-navy-blue"
                 >
                   Contact Us <ArrowRight size={16} />
                 </a>
@@ -651,13 +653,38 @@ export default function AboutHero() {
                   </p>
                 </div>
               </div>
+
+              <div className="flex items-start gap-3 mb-5">
+                <MapPin className="text-gold flex-shrink-0 mt-1" size={20} />
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.14em] text-gold-light font-bold mb-1">Challenge Campus</p>
+                  <p className="text-sm leading-relaxed text-white/85">
+                    123, Oyinloye Olawale Street,<br />
+                    Aba Bashorun Road,<br />
+                    Elebu, Ibadan.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 mb-5">
+                <MapPin className="text-gold flex-shrink-0 mt-1" size={20} />
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.14em] text-gold-light font-bold mb-1">PortHarcourt Campus</p>
+                  <p className="text-sm leading-relaxed text-white/85">
+                    123, Oyinloye Olawale Street,<br />
+                    Aba Bashorun Road,<br />
+                    Elebu, Ibadan.
+                  </p>
+                </div>
+              </div>
               <div className="h-px w-full bg-white/15 my-5" />
-              <p className="text-xs text-white/60 mb-1">Monday – Friday</p>
-              <p className="text-sm font-semibold text-white mb-5">8:00 AM – 6:00 PM</p>
+              <p className="text-xs text-navy-blue mb-1">Monday – Friday</p>
+              <p className="text-sm font-semibold mb-5 text-navy-blue">8:00 AM - 6:00 PM</p>
               <a
                 href="tel:+2348024971023"
-                className="inline-flex items-center gap-2 text-sm font-bold text-gold hover:text-gold-light transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-bold text-gold hover:text-gold-light transition-colors flex-col"
               >
+                <PhoneCall /><span>Call us directly</span>
                 +234 802 497 1023 <ArrowRight size={15} />
               </a>
             </motion.div>
