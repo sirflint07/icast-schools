@@ -26,10 +26,12 @@ import {
   Users,
   X,
 } from "lucide-react";
+import Image from "next/image";
+
 
 const photos = {
   learning:
-    "https://images.pexels.com/photos/5905554/pexels-photo-5905554.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    "/images/student-class.png",
   technology:
     "https://images.pexels.com/photos/11025019/pexels-photo-11025019.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   science:
@@ -38,6 +40,8 @@ const photos = {
     "https://images.pexels.com/photos/37163764/pexels-photo-37163764.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   classroom:
     "https://images.pexels.com/photos/8617940/pexels-photo-8617940.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  lab: 
+  "/images/lab-student.png"
 };
 
 
@@ -206,9 +210,11 @@ export default function Home() {
       <section className="section about-section" id="about">
         <div className="container about-grid">
           <div className="image-collage">
-            <img
+            <Image
               src={photos.learning}
               alt="Students learning with their teacher"
+              width={480}
+              height={420}
             />
             <div className="collage-card">
               <span className="gold-icon">
@@ -424,9 +430,12 @@ export default function Home() {
           </div>
           <div className="life-grid">
             <div className="life-feature">
-              <img
-                src={photos.sports}
+              <Image
+                src={photos.lab}
                 alt="Students playing football together"
+                width={300}
+                height={300}
+                loading="lazy"
               />
               <div>
                 <span>01 / Sport</span>

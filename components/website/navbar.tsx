@@ -32,6 +32,10 @@ const Navbar = () => {
             name: "Why Choose ICAST",
             href: "/about/why-choose-icast",
           },
+          {
+            name: "Admission Process",
+            href: "/admission",
+          }
         ],
       },
       {
@@ -60,24 +64,20 @@ const Navbar = () => {
         ],
       },
       {
-        label: "Admissions",
+        label: "Giving",
         children: [
           {
-            name: "Admission Process",
-            href: "/admission",
+            name: "Giving",
+            href: "/giving",
           },
           {
-            name: "Requirements",
-            href: "/admissions/requirements",
+            name: "Sponsorship",
+            href: "/giving",
           },
           {
-            name: "School Fees",
-            href: "/admissions/school-fees",
-          },
-          {
-            name: "Request Information",
-            href: "/admissions/request-information",
-          },
+            name: "Donations",
+            href: "/giving",
+          }
         ],
       },
       {
