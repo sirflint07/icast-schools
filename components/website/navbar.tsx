@@ -3,13 +3,26 @@
 
 import { ArrowRight, ChevronDown, ChevronRight, Clock3, Menu, Phone, X } from 'lucide-react';
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Navbar = () => {
 
     const [mobileOpen, setMobileOpen] = useState(false);
     const [openMenu, setOpenMenu] = useState<string | null>(null);
     const logoImage = '/images/icast-logo.png'
+    const navRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+      const closeNavDropdown = (event: MouseEvent) => {
+        if (navRef.current && !navRef.current.contains(event.target as Node)) {
+          setOpenMenu(null)
+        }
+      }
+
+      document.addEventListener('click', closeNavDropdown)
+      return () => document.removeEventListener('click', closeNavDropdown)
+    }, [])
+
 
 
     const navItems = [
@@ -192,7 +205,11 @@ const Navbar = () => {
                     Home
                   </a>
                   {navItems.map((item) => (
-                    <div className="nav-dropdown" key={item.label}>
+                    <div
+                      className="nav-dropdown"
+                      key={item.label}
+                      ref={openMenu === item.label ? navRef : undefined}
+                    >
                       <button
                         type="button"
                         onClick={() =>
