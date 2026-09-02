@@ -20,10 +20,8 @@ import {
   ShieldCheck,
   Info,
   PhoneCall,
-  ArrowUpRight,
   type LucideIcon,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -458,7 +456,7 @@ export default function GivingPage() {
 
       {/* ===== DONATION ACCOUNT DIALOG ===== */}
       <Dialog open={accountsOpen} onOpenChange={setAccountsOpen}>
-        <DialogContent className="sm:max-w-[520px] p-0 overflow-hidden border-gray-200">
+        <DialogContent className="sm:max-w-[520px] lg:max-w-[640px] h-[80vh] overflow-y-auto p-0 gap-0 overflow-x-hidden border border-gray-200 bg-white" style={{ borderRadius: '0.5rem' }}>
           {/* Dialog header band */}
           <div className="bg-navy text-white px-6 py-5 relative">
             <DialogHeader className="space-y-0">
@@ -474,28 +472,28 @@ export default function GivingPage() {
 
           <div className="p-6">
             {/* Account card with glass styling */}
-            <div className="bg-gradient-to-br from-white to-warm-dark border border-gray-200 shadow-sm p-6">
+            <div className="relative bg-warm/80 backdrop-blur-sm border border-gray-200 shadow-sm p-6">
               <div className="flex flex-col gap-5">
                 {/* Account name */}
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.14em] text-gray-400 font-bold mb-1.5">Account Name</p>
+                  <p className="text-[10px] uppercase tracking-[0.14em] text-deep-burgundy font-bold mb-1.5">Account Name</p>
                   <p className="text-base font-semibold text-navy">{accountDetails.accountName}</p>
                 </div>
                 <Separator className="bg-gray-100" />
                 {/* Bank */}
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.14em] text-gray-400 font-bold mb-1.5">Bank</p>
+                  <p className="text-[10px] uppercase tracking-[0.14em] text-deep-burgundy font-bold mb-1.5">Bank</p>
                   <p className="text-base font-semibold text-navy">{accountDetails.bank}</p>
                 </div>
                 <Separator className="bg-gray-100" />
                 {/* Account number with copy */}
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.14em] text-gray-400 font-bold mb-1.5">Account Number</p>
+                  <p className="text-[10px] uppercase tracking-[0.14em] text-deep-burgundy font-bold mb-1.5">Account Number</p>
                   <div className="flex items-center gap-3">
                     <p className="text-2xl font-serif font-medium text-burgundy tracking-wide">{accountDetails.accountNumber}</p>
                     <button
                       onClick={handleCopy}
-                      className="inline-flex items-center gap-1.5 bg-burgundy/8 text-burgundy px-3 py-2 text-xs font-bold rounded transition-all hover:bg-burgundy hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burgundy focus-visible:ring-offset-2"
+                      className="inline-flex items-center gap-1.5 bg-burgundy/8 text-burgundy px-3 py-2 text-xs font-bold rounded transition-all hover:bg-burgundy hover:text-deep-burgundy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burgundy focus-visible:ring-offset-2"
                       aria-label="Copy account number to clipboard"
                     >
                       {copied ? (
