@@ -14,7 +14,12 @@ const Navbar = () => {
 
     useEffect(() => {
       const closeNavDropdown = (event: MouseEvent) => {
-        if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        const target = event.target as Element
+        if (
+          navRef.current &&
+          !navRef.current.contains(target) &&
+          !target.closest('.nav-dropdown')
+        ) {
           setOpenMenu(null)
         }
       }

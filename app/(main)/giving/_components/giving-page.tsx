@@ -50,7 +50,7 @@ function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
   );
 }
 
-const heroImage = 'https://images.pexels.com/photos/5905554/pexels-photo-5905554.jpeg?auto=compress&cs=tinysrgb&h=650&w=940';
+const heroImage = '/images/student-class.png';
 const impactImage = 'https://images.pexels.com/photos/8199636/pexels-photo-8199636.jpeg?auto=compress&cs=tinysrgb&h=650&w=940';
 
 interface ImpactArea {

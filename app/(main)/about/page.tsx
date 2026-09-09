@@ -1,4 +1,4 @@
-import AboutPage from '@/app/about/_components/about-content'
+import AboutPage from '@/app/(main)/about/_components/about-content'
 import React from 'react'
 
 const About = () => {

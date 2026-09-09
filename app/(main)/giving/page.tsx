@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import GivingPage from '../giving/_components/giving-page';
+import GivingPage from './_components/giving-page';
 
 export const metadata: Metadata = {
   title: 'Giving — ICAST Schools, Elebu Ibadan',
