@@ -40,15 +40,15 @@ const Navbar = () => {
           },
           {
             name: "Our Mission & Vision",
-            href: "/about/mission-vision",
+            href: "/about",
           },
           {
             name: "Principal's Welcome",
-            href: "/about/principals-welcome",
+            href: "/about",
           },
           {
             name: "Why Choose ICAST",
-            href: "/about/why-choose-icast",
+            href: "/about",
           },
           {
             name: "Admission Process",
@@ -61,23 +61,23 @@ const Navbar = () => {
         children: [
           {
             name: "Creche",
-            href: "/academics/creche",
+            href: "/academics",
           },
           {
             name: "Nursery",
-            href: "/academics/nursery",
+            href: "/academics",
           },
           {
             name: "Primary",
-            href: "/academics/primary",
+            href: "/academics",
           },
           {
             name: "Secondary",
-            href: "/academics/secondary",
+            href: "/academics",
           },
           {
             name: "Curriculum",
-            href: "/academics/curriculum",
+            href: "/academics",
           },
         ],
       },
@@ -103,19 +103,19 @@ const Navbar = () => {
         children: [
           {
             name: "Clubs & Societies",
-            href: "/student-life/clubs-and-societies",
+            href: "/student-life",
           },
           {
             name: "Sports",
-            href: "/student-life/sports",
+            href: "/student-life",
           },
           {
             name: "Arts & Creativity",
-            href: "/student-life/arts-and-creativity",
+            href: "/student-life",
           },
           {
             name: "Gallery",
-            href: "/student-life/gallery",
+            href: "/student-life",
           },
         ],
       },
@@ -128,11 +128,11 @@ const Navbar = () => {
           },
           {
             name: "Boarding Facilities",
-            href: "/boarding/facilities",
+            href: "/boarding",
           },
           {
             name: "Boarding Life",
-            href: "/boarding/life",
+            href: "/boarding",
           },
         ],
       },
@@ -141,19 +141,19 @@ const Navbar = () => {
         children: [
           {
             name: "Science Laboratories",
-            href: "/facilities/science-laboratories",
+            href: "/facilities",
           },
           {
             name: "ICT / Technology",
-            href: "/facilities/ict-technology",
+            href: "/facilities",
           },
           {
             name: "Library",
-            href: "/facilities/library",
+            href: "/facilities",
           },
           {
             name: "Sports Facilities",
-            href: "/facilities/sports",
+            href: "/facilities",
           },
         ],
       },
@@ -162,15 +162,15 @@ const Navbar = () => {
         children: [
           {
             name: "Latest News",
-            href: "/news/latest",
+            href: "/news",
           },
           {
             name: "School Events",
-            href: "/news/events",
+            href: "/news",
           },
           {
             name: "Announcements",
-            href: "/news/announcements",
+            href: "/news",
           },
         ],
       },
